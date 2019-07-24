@@ -35,6 +35,9 @@ class DBManager
         if (!$this->artCostIsExits())
             return false;
 
+        if (!is_numeric($art_cost))
+            return false;
+
         $get_art_cost = $this->geArtCost($postID);
 
         if ($get_art_cost == $art_cost)

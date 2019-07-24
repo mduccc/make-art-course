@@ -14,7 +14,7 @@ function display()
            </script>
            <div class='meta-art-cost'>
                <label>Giá tiền(VNĐ): </label>
-               <input id='art-cost-input' type='number' name='art-cost' value='" . $DB->geArtCost($post->ID) . "' >
+               <input id='art-cost-input' type='text' oninput='validate()' name='art-cost' value='" . $DB->geArtCost($post->ID) . "' >
                <button class='art-cost-save' onclick='save_art_cost(url, postID)'>Lưu</button>
                <span class='save-art-cost-state'></span>
            </div>       

@@ -1,9 +1,9 @@
 function save_art_cost(url, postID) {
     $('.save-art-cost-state').empty();
     let art_cost = $("#art-cost-input").val();
-    console.log(url);
+    console.log(url)
     console.log(postID)
-    console.log(art_cost);
+    console.log(art_cost)
     $.ajax({
         type: 'post',
         url: url,
@@ -23,5 +23,14 @@ function save_art_cost(url, postID) {
         .error(err => {
             alert('err');
             console.log(err);
-        });
+        })
+}
+
+function validate() {
+    const value = $('#art-cost-input').val()
+
+    if (!isNaN(value))
+        $('#art-cost-input').val(value)
+    else
+        $('#art-cost-input').val(value.substring(0, value.length - 1))
 }
