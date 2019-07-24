@@ -17,7 +17,7 @@ if (isset($_POST['postID']) && isset($_POST['art_cost'])) {
     $DB = new DBManager();
     $isExits = $DB->artCostIsExits();
 
-    if(is_numeric($art_cost) && $isExits)
+    if($isExits)
         $result = $DB->saveArtCost($postId, $art_cost);
 }
 
